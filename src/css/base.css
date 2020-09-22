@@ -1,0 +1,4 @@
+body {
+  background: rgb(var(--colorPrimary));
+  color: rgb(var(--colorOnPrimary));
+}

@@ -1,0 +1,75 @@
+{
+  "name": "gec",
+  "version": "1.0.0",
+  "description": "Golden Eagle Coins 2020",
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "Enrique Ramírez<me@enrique-ramirez.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "lint": "eslint src/**/*.js && stylelint src/**/*.css",
+    "lint:fix": "eslint src/**/*.js --fix && stylelint src/**/*.css --fix",
+    "prebuild": "npm run lint",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js",
+    "start:dev": "rimraf dist && cross-env NODE_ENV=development webpack-dev-server --config config/webpack/webpack.dev.js",
+    "update-npm-versions": "npm-check --skip-unused --update"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^2.4.14",
+    "normalize.css": "8.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "8.1.0",
+    "cache-loader": "4.1.0",
+    "circular-dependency-plugin": "5.2.0",
+    "copy-webpack-plugin": "^6.1.1",
+    "cross-env": "7.0.2",
+    "css-loader": "^4.3.0",
+    "cssnano": "4.1.10",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-import-resolver-webpack": "0.12.2",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-import": "2.22.0",
+    "file-loader": "^6.1.0",
+    "handlebars-loader": "1.7.1",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "image-webpack-loader": "^7.0.1",
+    "lint-staged": "^10.4.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "npm-check": "5.9.2",
+    "path": "0.12.7",
+    "postcss": "^8.0.7",
+    "postcss-hexrgba": "2.0.1",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "^4.0.2",
+    "postcss-preset-env": "6.7.0",
+    "prettier": "^2.1.2",
+    "rimraf": "3.0.2",
+    "stylelint": "^13.7.1",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.3.0",
+    "stylelint-order": "4.1.0",
+    "webfonts-loader": "^7.0.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
