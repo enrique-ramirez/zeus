@@ -1,7 +1,7 @@
 {
-  "name": "gec",
+  "name": "Zeus",
   "version": "1.0.0",
-  "description": "Golden Eagle Coins 2020",
+  "description": "Static website builder",
   "keywords": [
     "html",
     "css"
@@ -17,7 +17,6 @@
     "update-npm-versions": "npm-check --skip-unused --update"
   },
   "dependencies": {
-    "@splidejs/splide": "^2.4.14",
     "normalize.css": "8.0.1"
   },
   "devDependencies": {
